@@ -62,6 +62,7 @@ h4 {
 
 .cover-image {
 	height: 60%;
+	width: auto;
 }
 
 /*PROJECT GRID*/
