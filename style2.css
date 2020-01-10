@@ -14,6 +14,7 @@ p {
 
 li {
 	padding: 10px;
+	font-family: "Courier New";
 }
 
 a{
@@ -38,6 +39,8 @@ footer {
 }
 
 
+/*CONTAINER*/
+
 .container {
 	display: flex;
 	flex-wrap: wrap;
@@ -48,6 +51,19 @@ footer {
 	box-shadow: 4px 4px 5px #888888;
 	padding-bottom: 10px;
 }
+
+.container-column {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	margin: 30px;
+	padding: 20px;
+	border-bottom: solid 1px black;
+	box-shadow: 4px 4px 5px #888888;
+	padding-bottom: 10px;
+}
+
+
 
 .zone {
     /*padding:30px 50px;*/
@@ -67,6 +83,8 @@ footer {
 }
 
 
+/*NAV*/
+
 .sticky {
 	position: fixed;
 	top: 0;
@@ -82,12 +100,13 @@ footer {
 
 
 
+/*IMAGE*/
+
 img {
 	width: 450px;
 	height: 300px;
 	margin: 10px;
 	transition: all 1s;
-	float:right;
 }
 
 img:hover{
@@ -106,7 +125,13 @@ img:hover{
 
 
 .paragraph {
-	width: 450px;
+	width: auto;
+	height: auto;
+	padding: 20px;
+}
+
+.paragraph-width {
+	width: 500px;
 	height: auto;
 }
 
@@ -116,7 +141,15 @@ img:hover{
 	overflow: auto;
 }
 
+ol > li {
+	padding: 5px;
+}
 
+.container > p {
+	margin : 10px;
+}
+
+/*COLOR*/
 .blue{
     background: #7abcff; /* Old browsers */
     background: -moz-linear-gradient(top, #7abcff 0%, #60abf8 44%, #4096ee 100%); /* FF3.6+ */
