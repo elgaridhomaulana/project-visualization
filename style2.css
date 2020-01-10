@@ -3,20 +3,24 @@
 }*/
 body {
 	margin: 0px;
-	background: #7abcff;
 }
 
-.container {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	margin: 30px;
-	border-bottom: solid 1px black;
-	box-shadow: 4px 4px 5px #888888;
-	padding-bottom: 10px;
-	background-color: white;
+p {
+	font-family: 'Courier New';
+	font-size: 1em;
+	text-align: justify;
+	color:rgb(4,32,55);
 }
+
+li {
+	padding: 10px;
+}
+
+a{
+	color: white;
+	text-decoration: none;
+}
+
 
 h1 {
 	font-family: 'Courier New';
@@ -28,6 +32,56 @@ h1 {
 	box-shadow: 4px 4px 5px #888888;
 }
 
+footer {
+	margin-top: 10px;
+	text-align: center;
+}
+
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin: 30px;
+	border-bottom: solid 1px black;
+	box-shadow: 4px 4px 5px #888888;
+	padding-bottom: 10px;
+}
+
+.zone {
+    /*padding:30px 50px;*/
+    cursor:pointer;
+    color:#FFF;
+    font-size:1em;
+    border-radius:4px;
+    border:1px solid #bbb;
+    transition: all 0.3s linear;
+}
+
+.zone:hover {
+    -webkit-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -moz-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -o-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+}
+
+
+.sticky {
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+.main-nav {
+	display: grid;
+	list-style: none;
+	margin:0;
+	font-size:0.9em;
+	grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+}
+
+
+
 img {
 	width: 450px;
 	height: 300px;
@@ -37,7 +91,7 @@ img {
 }
 
 img:hover{
-	transform: scale(1.3);
+	transform: scale(1.1);
 }
 
 .large-img-bar {
@@ -50,11 +104,6 @@ img:hover{
 	height: 600px;
 }
 
-p {
-	font-family: 'Courier New';
-	font-size: 1em;
-	text-align: justify;
-}
 
 .paragraph {
 	width: 450px;
@@ -67,14 +116,14 @@ p {
 	overflow: auto;
 }
 
-footer{
-	display:flex;
-	justify-content: center;
-	color:white;
-	text-align: center;
-	margin-top: 20px;
-	font-family: 'Courier New';
-	border-top: 1px solid black;
-	background-color:#888888;
+
+.blue{
+    background: #7abcff; /* Old browsers */
+    background: -moz-linear-gradient(top, #7abcff 0%, #60abf8 44%, #4096ee 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7abcff), color-stop(44%,#60abf8), color-stop(100%,#4096ee)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* IE10+ */
+    background: linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* W3C */
 }
 
