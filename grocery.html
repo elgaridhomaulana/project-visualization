@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Grocery Product Visualization</title>
+	<link rel="stylesheet" type="text/css" href="style2.css">
+</head>
+<body>
+	<div class="zone blue">
+	  	<ul class="main-nav ">
+	  		<li><a href="index.html">Home</a></li>
+	  	</ul>
+	</div>
+
+	<h1>Grocery Product Visualization</h1>
+
+	<div class="container-column">
+		<div class="paragraph">
+		<p>Data yang digunakan dalam projek ini adalah data review dan rating dari produk grocery dan gourment food yang dijual di Amazon. Data diperoleh dari website http://jmcauley.ucsd.edu/data/amazon/links.html. Terdapat dua data utama yang digunakan yaitu rating dan metadata dari produk. Terdapat lebih dari 8500 produk yang direview dalam data ini dan terdapat lebih dari 150000 review.</p>
+
+		<p>Data review memiliki 151254 baris. Artinya, terdapat 151254 review dalam data tersebut. Sementara itu, terdapat 9 kolom yang di mana penjelasan dari kolom tersebut adalah sebagai berikut:</p>
+
+		<ol>
+			<li>reviewerID - ID dari reviewer, misalkan: A2SUAM1J3GNN3B</li>
+			<li>asin - ID dari produk yang di review, misalkan: 0000013714</li>
+			<li>reviewerName - nama dari reviewer</li>
+			<li>helpful - presentase rating membantu atau tidak misalkan 2/3</li>
+			<li>reviewText - text dari review</li>
+			<li>overall - rating yang diberikan oleh user terhadap produk</li>
+			<li>summary - ringkasan dari review</li>
+			<li>unixReviewTime - (unix time)</li>
+			<li>reviewTime - waktu review (raw)</li>
+		</ol>
+		</div>
+	</div>
+
+	<div class="container zone">
+		<div class="paragraph">
+			<p>Kolom <strong>helpful</strong> dari data review menginformasikan presentase dari jumlah orang yang menyatakan bahwa review tersebut berguna. Nilai dari kolom ini secara default berbentuk seperti list dengan dua nilai, nilai pertama adalah jumlah orang yang menilai bahwa review ini berguna sedangkan nilai kedua adalah jumlah semua orang yang memberikan vote terhadap review ini.</p>
+		</div>
+		<img src="img/grocery/grocery-1.png">
+		<img src="img/grocery/grocery-2.png">
+		<div class="paragraph">
+			<p>Data paling banyak dari kolom percentage_helpful adalah No Vote [0, 0], kemudian 100% dan 0%. 100% artinya adalah seluruh orang yang melakukan vote terhadap review tersebut menilai bahwa review tersebut membantu. Sementara itu, 0% berarti dari seluruh orang yang melakukan vote tidak ada yang berpikir bahwa review tersebut membantu. Banyak review yang tidak memiliki vote helpful. 90% data bahkan tidak memiliki vote lebih dari 5.</p>
+		</div>
+	</div>
+	<div class="container zone">
+		<img src="img/grocery/grocery-3.png">
+		<div class="paragraph">
+			<p>Kolom <strong>overall</strong> menunjukan rating dari produk yang diberikan oleh pembeli dalam hal ini reviewer. Rentang dari overall adalah dari 1 - 5. 1 Menunjukan rating paling buruk sedangkan 5 menunjukan rating paling baik.</p>
+
+			<p>Seperti yang dapat kita lihat dari grafik bar di atas, review dengan rating 5 sangat banyak dibandingkan dengan rating lainnya. Bahkan apabila dijumlahkan antara rating 1 sampai dengan 4, jumlahnya masih lebih sedikit dibandingkan dengan jumlah rating 5.</p>
+		</div>
+	</div>
+	<div class="container zone ">
+		<div class="paragraph">
+			<p>Kolom <strong>reviewText</strong> berisi teks dari review yang diberikan oleh pembeli terhadap suatu produk. Kolom ini dapat digunakan untuk memprediksi dari nilai rating. Secara logika, pembeli yang memberikan review buruk terhadap produk akan memberikan rating yang buruk terhadap produk.</p>
+		</div>
+		<img src="img/grocery/grocery-5.png">
+		<div class="long">
+			<p>Pada gambar distribusi dari jumlah kata dalam teks review, banyak data dengan jumlah kata kurang dari 100. Namun, terdapat data yang memiliki jumlah kata sekitar 4700 kata.</p>
+		</div>
+		<img src="img/grocery/grocery-4.png">
+		<div class="paragraph">
+			<p>Apakah terdapat pengaruh antara jumlah kata dengan count helpful?</p>
+			<p>Tidak terlalu terlihat pengaruh dari jumlah kata dalam review dengan count helpful. Terdapat review dengan jumlah kata yang sedikit tetapi memiliki count review yang banyak. Ada juga review dengan jumlah kata 4700 tetapi count helpfulnya tidak banyak.</p>
+		</div>
+
+	</div>
+	<div class="container zone ">
+		<div class="paragraph">
+			<p>Kolom overall dibagi menjadi 3 kategori yaitu: Good, Neutral, dan Bad. Good merupakan rating dalam rentang 4-5. Neutral adalah rating 3. Bad merupakan rating dari 1-2.</p>
+		</div>
+		<img src="img/grocery/grocery-6.png">
+		<img src="img/grocery/grocery-7.png">
+		<img src="img/grocery/grocery-8.png">
+		<div class="paragraph">
+			<p>taste dan flavor merupakan kata-kata yang sering muncul di tiga kategori rating. Hal ini menujukkan bahwa produk sering sekali dinilai berdasarkan rasa dan flavornya.</p>
+			<p>Tidak terlihat perbedaan kata yang jelas antara review pada rating dengan kategori good, neutral, dan bad. Apabila kita akan memprediksi rating menggunakan review, tentu saja akan menghasilkan nilai akurasi yang buruk. Kita harus melakukan sesuatu sebelum kita membuat model apabila kita ingin menggunakan kolom ini untuk memprediksi rating.</p>
+		</div>
+	</div>
+	<div class="container zone ">
+		<div class="paragraph">
+			<p>Kolom <strong>reviewTime</strong> merupakan kolom yang memberikan informasi kapan review dari reviewer diberikan.</p>
+		</div>
+		<img src="img/grocery/grocery-9.png">
+		<div class="paragraph">
+			<p>Review pada data pada grocery dan gourmet food ini tersedia dari tahun 2000 sampai dengan 2014. Akan tetapi, data yang tercatat mulai banyak sekitar tahun 2011, yaitu 20000 data. Sedangkan data tahun 2000 - 2005 hanya sedikit, bahkan tidak ada data pada tahun 2001 dan 2002.</p>
+		</div>
+		<img src="img/grocery/grocery-10.png">
+		<div class="paragraph">
+			<p>Dari gambar di atas, dapat dilihat bahwa review paling banyak terjadi pada bulan Maret, dan jumlahnya semakin menurun sampai pada titik terendahnya pada bulan September. Dari bulan September, jumlah review semakin meningkat hingga bulan Desember.</p>
+
+			<p>Review baru diberikan setelah produk didapatkan, mungkin terdapat beberapa produk yang baru sampai ke tangan konsumen 1-2 bulan setelah pembelian. Sehingga untuk puncak review, pada Bulan Maret mungkin pembelian dilakukan pada Bulan Januari atau Februari. Begitu juga dengan titik terendah jumlah revieww, pada Bulan September, mungkin pembelian dilakukan pada Bulan Juli atau Agustus.</p>
+
+			<p>Akan tetapi, dari grafik diatas, review secara umum banyak terjadi pada awal tahun dan akhir tahun, sedangkan tengah tahun mengalami penurunan.</p>
+		</div>
+		<img src="img/grocery/grocery-11.png">
+		<img src="img/grocery/grocery-12.png">
+		<div class="paragraph">
+			<p>Pada awal bulan hingga pertengahan bulan, terjadi penurunan jumlah review. Dari tengah bulan hingga akhir bulan, terjadi peningkatan. Jumlah review paling banyak terjadi pada akhir bulan, sekitar tanggal 25-28. Namun terjadi penurunan 29-31 sangat tajam.</p>
+
+			<p>Jumlah review paling banyak terjadi pada hari Kamis. Tidak disangka, Jumat, Sabtu, dan Minggu jumlah review tidak terlalu banyak, bahkan tidak sebanyak pada hari Senin, Selasa, dan Rabu.</p>
+		</div>
+		<div class="container zone">
+		<img src="img/grocery/grocery-13.PNG">
+		<div class="paragraph">
+			<p>Dari metada kita dapat melihat judul produk dengan menggunakan word cloud. Produk yang paling banyak mncul adalah tea, chocolate, bean, ovile oil, sea salt, peanut butter.</p>		
+		</div>
+	</div>
+	</div>
+
+
+
+
+</body>
+<footer class="zone blue">Elga Ridho Maulana &copy;2020</footer>
+</html>
